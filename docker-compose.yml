@@ -20,9 +20,9 @@ services:
       - db
     ports:
       - "3000:3000"
-    volumes:             # Hot-Reload para el código y las subidas locales
-      - ./backend:/app
-      - ./uploads:/app/uploads
+    volumes:
+    - ./backend:/app               # código fuente hot-reload
+    - /app/node_modules            # ← volumen anónimo SOLO para node_modules
 
   frontend:
     build: ./frontend

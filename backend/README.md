@@ -6,10 +6,10 @@
 
 ## ✨ What it does
 
-- **Record → Transcribe → Code** ‑ Upload a home‑health visit audio note, the system transcribes it with Whisper and auto‑codes Section G (M1800‑M1860) using GPT function‑calling.
-- **Persists** patients, notes, transcripts, summaries & OASIS‑G in Postgres.
-- **Plays back** audio, shows the full transcript, a clinical summary and the OASIS table—ready to copy into OASIS‑E.
-- **Runs anywhere** via Docker Compose (Postgres 16, Node 18, Nginx) or bare‑metal.
+* **Record → Transcribe → Code** ‑ Upload a home‑health visit audio note, the system transcribes it with Whisper and auto‑codes Section G (M1800‑M1860) using GPT function‑calling.
+* **Persists** patients, notes, transcripts, summaries & OASIS‑G in Postgres.
+* **Plays back** audio, shows the full transcript, a clinical summary and the OASIS table—ready to copy into OASIS‑E.
+* **Runs anywhere** via Docker Compose (Postgres 16, Node 18, Nginx) or bare‑metal.
 
 ---
 
@@ -144,11 +144,11 @@ $ docker compose exec backend npx prisma migrate deploy
 
 ## 🛣️ Roadmap / Next steps
 
-- 🔐 Add JWT auth & RBAC (clinicians vs admins)
-- ☁️ S3 storage (switch StorageService via ENV)
-- 🧪 Unit tests (Jest + Supertest) & GitHub Actions CI
-- 📝 Type‑safe front (tRPC or React Query)
-- 📈 Analytics dashboard (OASIS score trends)
+* 🔐 Add JWT auth & RBAC (clinicians vs admins)
+* ☁️ S3 storage (switch StorageService via ENV)
+* 🧪 Unit tests (Jest + Supertest) & GitHub Actions CI
+* 📝 Type‑safe front (tRPC or React Query)
+* 📈 Analytics dashboard (OASIS score trends)
 
 ---
 

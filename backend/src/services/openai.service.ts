@@ -3,13 +3,15 @@ import fs from "fs";
 export class OpenAIService {
     private client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-    async transcribe(path: string) {
-        const resp: any = await this.client.audio.transcriptions.create({
-            file: fs.createReadStream(path),
+    async transcribe(filePath: string): Promise<string> {
+        const resp = await this.client.audio.transcriptions.create({
+            file: fs.createReadStream(filePath),
             model: "whisper-1",
-            response_format: "text"
+            // "text" ya es el formato por defecto → no hace falta response_format
         });
-        return resp.text;
+
+        // Puede venir undefined si Whisper falla
+        return resp.text ?? "";
     }
 
     async extractOasis(transcript: string) {
